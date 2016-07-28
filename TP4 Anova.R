@@ -228,6 +228,9 @@ rbind(cbind(Anderson$method,'p valor' = as.numeric(Anderson$p.value)),
 Kruskal <- kruskal.test(coccion$tiempo ~ coccion$Grupo)
 Kruskal
 
+ggplot(coccion, aes(tiempo, fill = Grupo)) + geom_density(alpha = 0.2) #distribuciones parecidas
+
+qplot(x= tiempo,facets= .~ Grupo, data=coccion, geom="histogram")
 
 'El valor p obtenido es menor al valor de alfa establecido, por lo tanto, se rechaza la hipótesis de igualdad de medias.
 
@@ -235,3 +238,4 @@ En los análisis de varianzas realizados, se rechazó la hipótesis nula de igua
 
 
 #Ejercicio 6
+
